@@ -18,6 +18,15 @@ def calc_min_temperature(numbers):
     return min(numbers)
 def calc_max_temperature(numbers):
     return max(numbers)
+def  calc_median_temperature(numbers):
+    sorted_numbers= sorted(numbers)
+    n = len(sorted_numbers)
+    if n%2!=0:
+        median=sorted_numbers[n//2]
+    else:
+        median=(sorted_numbers[n//2-1]+sorted_numbers[n//2])/2
+    return median
+
 
 
 
@@ -26,10 +35,12 @@ def display():
     average=round(calc_average_temperature(numbers),2)
     maximum=calc_max_temperature(numbers)
     minimum=calc_min_temperature(numbers)
+    median=calc_median_temperature(numbers)
 
     print("Average temperature: "+str(average))
     print("Maximum temperature: "+str(maximum))
     print("Minimum temperature: "+str(minimum))
+    print("Median temperature: "+str(median))
 
 
 display()
